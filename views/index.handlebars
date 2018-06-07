@@ -1,0 +1,35 @@
+<h1>FEARFUL GREETINGS, GREAT DEVOURER!</h1>
+
+<h2>Planets that are as yet untouched:</h2>
+
+<ul>
+  {{#each planets}}
+    {{#unless devoured}}
+      <li>
+        {{this.planet_name}}
+        <button class='devour' data-id='{{this.id}}'>CONSUME</button>
+      </li>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Planets that have been devoured:</h2>
+
+<ul>
+  {{#each planets}}
+    {{#if devoured}}
+      <li>{{this.planet_name}}</li>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Planet</h2>
+<form class="target-planet">
+
+  <div class="form-group">
+    <label for="newPlanet">Planet:</label>
+    <input type="text" id="newPlanet" name="name">
+  </div>
+
+  <button type="submit">Acquire Target</button>
+</form>
